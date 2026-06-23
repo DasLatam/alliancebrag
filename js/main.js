@@ -31,28 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var form = document.getElementById("contact-form");
   if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      var name = form.querySelector("#name").value.trim();
-      var email = form.querySelector("#email").value.trim();
-      var phone = form.querySelector("#phone").value.trim();
-      var affair = form.querySelector("#affair").value.trim();
-      var message = form.querySelector("#message").value.trim();
-
-      var body =
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n" +
-        "Phone: " + phone + "\n\n" +
-        message;
-
-      var mailto =
-        "mailto:support@alliancebrag.com" +
-        "?subject=" + encodeURIComponent("[AllianceBrag] " + affair) +
-        "&body=" + encodeURIComponent(body);
-
-      window.location.href = mailto;
-
+    form.addEventListener("submit", function () {
       var status = document.getElementById("form-status");
       if (status) {
         status.classList.add("is-visible");

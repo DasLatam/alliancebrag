@@ -588,6 +588,21 @@ p { color: var(--ink-soft); }
   gap: 1.4rem;
 }
 
+.map-embed {
+  margin-top: 2.5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  display: block;
+}
+
 .contact-info-list .card {
   display: flex;
   gap: 1rem;

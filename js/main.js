@@ -28,14 +28,4 @@ document.addEventListener("DOMContentLoaded", function () {
   if (year) {
     year.textContent = new Date().getFullYear();
   }
-
-  var form = document.getElementById("contact-form");
-  if (form) {
-    form.addEventListener("submit", function () {
-      var status = document.getElementById("form-status");
-      if (status) {
-        status.classList.add("is-visible");
-      }
-    });
-  }
 });

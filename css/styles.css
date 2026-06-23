@@ -354,10 +354,22 @@ p { color: var(--ink-soft); }
   font-weight: 600;
 }
 
-.trust-strip span {
+.trust-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
+}
+
+.trust-item .icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  color: var(--orange-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==========================================================================
@@ -484,6 +496,55 @@ p { color: var(--ink-soft); }
   color: var(--purple);
 }
 
+/* Story / pull-quote */
+.story {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.story-quote {
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  position: relative;
+  color: #fff;
+}
+
+.story-quote::before {
+  content: "\201C";
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  color: var(--orange);
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.story-quote p {
+  color: #e7e1ee;
+  font-size: 1.05rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+
+.story-quote footer {
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 860px) {
+  .story {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
 /* ==========================================================================
    Page header (secondary pages)
    ========================================================================== */
@@ -520,6 +581,74 @@ p { color: var(--ink-soft); }
   height: 320px;
   border: 0;
   display: block;
+}
+
+/* ==========================================================================
+   Subscribe page
+   ========================================================================== */
+
+.subscribe-box {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.subscribe-form input {
+  flex: 1;
+  font: inherit;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+}
+
+.subscribe-form input:focus {
+  outline: none;
+  border-color: var(--purple-light);
+}
+
+.subscribe-form .btn {
+  border-radius: 999px;
+}
+
+.subscribe-note {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.subscribe-perks {
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.subscribe-perks li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.subscribe-perks svg {
+  color: var(--green-dark);
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .subscribe-form {
+    flex-direction: column;
+  }
 }
 
 /* ==========================================================================

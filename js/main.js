@@ -28,4 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
   if (year) {
     year.textContent = new Date().getFullYear();
   }
+
+  var subscribeForm = document.getElementById("subscribe-form");
+  if (subscribeForm) {
+    subscribeForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("subscribe-email").value.trim();
+      if (!email) return;
+      var subject = encodeURIComponent("Newsletter Subscription");
+      var body = encodeURIComponent(
+        "Hi AllianceBrag,\n\nPlease add this email to your newsletter list: " + email + "\n\nThanks!"
+      );
+      window.location.href = "mailto:support@alliancebrag.com?subject=" + subject + "&body=" + body;
+    });
+  }
 });

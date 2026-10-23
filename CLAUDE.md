@@ -1,6 +1,6 @@
 # AllianceBrag — memoria del proyecto
 
-> **APAGADO el 2026-10-16** a pedido de Ariel (proyecto dormido): se comentó su `@reboot` en el crontab, se sacó la fila 8091 del watchdog y se detuvo el portal. Código y datos intactos. **Para volver a levantarlo:** descomentar el `@reboot` (`crontab -e`, buscar «APAGADO 2026-10-16») y la fila 8091 en `/home/hpp/agente/scripts/levantar_portales.sh`; el watchdog lo levanta en ≤10 min. Repo `DasLatam/alliancebrag` sin tocar.
+> **APAGADO el 2026-10-16** a pedido de Ariel (proyecto dormido): se comentó su `@reboot` en el crontab, se sacó la fila 8091 del watchdog y se detuvo el portal. Código y datos intactos. **Para volver a levantarlo:** descomentar el `@reboot` (`crontab -e`, buscar «APAGADO 2026-10-16») y la fila 8091 en `/home/hpp/agente/scripts/levantar_portales.sh`; el watchdog lo levanta en ≤10 min. Repo `DasLatam/alliancebrag`: público y en GitHub Pages desde 2026-10-22 (ver abajo).
 
 Sitio estático (HTML/CSS/JS, sin backend) para AllianceBrag.
 
@@ -13,9 +13,9 @@ Sitio estático (HTML/CSS/JS, sin backend) para AllianceBrag.
 - **Conexión Git:** lista — remoto `origin` ya apunta a
   `git@github-alliancebrag:DasLatam/alliancebrag.git` (rama `main`),
   con keypair SSH dedicada (`~/.ssh/id_ed25519_alliancebrag_github`,
-  alias `github-alliancebrag` en `~/.ssh/config`). Sin commits propios
-  todavía — el contenido del sitio (2026-06-23) está en el working
-  tree sin pushear.
+  alias `github-alliancebrag` en `~/.ssh/config`). Contenido commiteado y
+  pusheado a `main` (2026-06-23); local = remoto
+  (verificado 2026-10-22).
 - **Firewall, cron y alta en el tablero:** todavía **pendientes** — no
   se ejecutó ningún comando de `sudo ufw`, no se agregó cron
   `@reboot`, y no se tocó `tablero/projects.json`. Ver `PUBLICAR.md` en

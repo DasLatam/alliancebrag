@@ -1,0 +1,17 @@
+# GitHub Pages sale de la rama gh-pages (el token del server no puede cambiar
+# la fuente a main). Este workflow la mantiene igual a main en cada push.
+name: Publicar en Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git push --force origin HEAD:refs/heads/gh-pages

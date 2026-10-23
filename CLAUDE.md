@@ -45,8 +45,8 @@ proyectos (solo el tablero, puerto 9000, está detrás de Caddy).
 
 ## GitHub Pages (2026-10-22)
 
-- **Publicado en https://daslatam.github.io/alliancebrag/** desde `main`, carpeta raíz
-  (`/`), sin build. Pedido de Ariel: el repo `DasLatam/alliancebrag` pasó a
+- **Publicado en https://daslatam.github.io/alliancebrag/** desde la rama `gh-pages`, carpeta raíz
+  (`/`), sin build. `gh-pages` es copia de `main`: la mantiene `.github/workflows/pages.yml` en cada push (el token del server no tiene permiso de Pages para poner `main` como fuente; Pages se activó solo al empujar `gh-pages`). Pedido de Ariel: el repo `DasLatam/alliancebrag` pasó a
   **público** (antes privado: Pages gratis sólo sirve repos públicos) y se
   desarchivó. Auditoría previa de árbol e historial completo: sin claves ni
   datos personales (sólo el correo/teléfono/dirección comerciales que ya

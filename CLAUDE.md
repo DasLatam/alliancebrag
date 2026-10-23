@@ -1,5 +1,7 @@
 # AllianceBrag — memoria del proyecto
 
+> **APAGADO el 2026-10-16** a pedido de Ariel (proyecto dormido): se comentó su `@reboot` en el crontab, se sacó la fila 8091 del watchdog y se detuvo el portal. Código y datos intactos. **Para volver a levantarlo:** descomentar el `@reboot` (`crontab -e`, buscar «APAGADO 2026-10-16») y la fila 8091 en `/home/hpp/agente/scripts/levantar_portales.sh`; el watchdog lo levanta en ≤10 min. Repo `DasLatam/alliancebrag` sin tocar.
+
 Sitio estático (HTML/CSS/JS, sin backend) para AllianceBrag.
 
 ## Infraestructura
@@ -40,3 +42,20 @@ Sitio estático (HTML/CSS/JS, sin backend) para AllianceBrag.
 Caddy/HTTPS **no** está configurado para este proyecto — se accede
 directo por `http://192.168.1.71:8091`, igual que el resto de los
 proyectos (solo el tablero, puerto 9000, está detrás de Caddy).
+
+## GitHub Pages (2026-10-22)
+
+- **Publicado en https://daslatam.github.io/alliancebrag/** desde `main`, carpeta raíz
+  (`/`), sin build. Pedido de Ariel: el repo `DasLatam/alliancebrag` pasó a
+  **público** (antes privado: Pages gratis sólo sirve repos públicos) y se
+  desarchivó. Auditoría previa de árbol e historial completo: sin claves ni
+  datos personales (sólo el correo/teléfono/dirección comerciales que ya
+  muestra el sitio y el correo de Ariel como autor de los commits).
+- **Todo lo que se pushea a `main` queda público y se publica solo.** Nada de
+  credenciales, `.env` ni datos de clientes en este repo. Este CLAUDE.md y
+  PUBLICAR.md también se ven en el repo y en Pages.
+- Las páginas viven bajo el prefijo `/alliancebrag/`: usar **sólo rutas relativas**
+  (`assets/...`, `index.html`), nunca `/assets/...`. `404.html` se sirve en
+  cualquier ruta inexistente, por eso lleva un `<base>` que sólo se activa en
+  github.io. `.nojekyll` = se sirven los archivos tal cual.
+- Verificar: `curl -sI https://daslatam.github.io/alliancebrag/` → 200.
